@@ -100,7 +100,7 @@ def self.first_student_in_grade_10
     ORDER BY students.id
     LIMIT 1
   SQL
-  DB[:conn].execute(sql, id).map do |row|
+  DB[:conn].execute(sql, number).map do |row|
     self.new_from_db(row)
   end
 end
