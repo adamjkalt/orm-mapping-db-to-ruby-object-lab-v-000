@@ -109,7 +109,7 @@ def self.all_students_in_grade_X(number)
   sql = <<-SQL
     SELECT *
     FROM students
-    WHERE grade = number
+    WHERE grade = ?
     ORDER BY students.id
   SQL
   DB[:conn].execute(sql).map do |row|
